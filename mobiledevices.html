@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mobile Projects</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #000000, #0a0a0a, #111111, #000000);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   HEADER (UNCHANGED)
+========================= */
+header {
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a,
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+nav a:hover,
+nav a.active,
+.dropdown > a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0,0,0,0.9);
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  min-width: 160px;
+  z-index: 200;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+/* =========================
+   PHONE CARDS
+========================= */
+.button-container {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Phone frame */
+.square-button {
+  position: relative;
+  width: 270px;
+  height: 560px;
+  border-radius: 48px;
+  overflow: hidden;
+  text-decoration: none;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(25px);
+  box-shadow: 
+    0 40px 80px rgba(0,0,0,0.7),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  transition: all 0.5s cubic-bezier(.16,.8,.3,1);
+}
+
+/* Phone screen content (images and videos) */
+.square-button img,
+.square-button video {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
+  object-fit: contain;
+  border-radius: 30px;
+  transition: transform 1s ease;
+}
+
+.square-button:hover {
+  transform: translateY(-18px) scale(1.03);
+  box-shadow: 
+    0 60px 120px rgba(0,0,0,0.9),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.square-button:hover img,
+.square-button:hover video {
+  transform: scale(1.04);
+}
+
+/* Fade overlay */
+.square-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3),
+    transparent
+  );
+}
+
+/* Text */
+.button-header {
+  position: absolute;
+  bottom: 40px;
+  left: 35px;
+  z-index: 2;
+}
+
+.button-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.button-header p {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-bottom: 8px;
+}
+
+.button-header span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1000px) {
+  .button-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .square-button {
+    width: 230px;
+    height: 480px;
+  }
+}
+
+/* =========================
+   LUDO CTA
+========================= */
+.ludo-wrapper {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.ludo-button {
+  padding: 14px 34px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5E134C, #7c1a64);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 40px rgba(94,19,76,0.4);
+}
+
+.ludo-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 25px 60px rgba(94,19,76,0.6);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="homepage.html">Home</a>
+<div class="dropdown">
+<a href="projects.html" class="active">Mobile</a>
+<div class="dropdown-menu">
+<a href="personalprojects.html">Personal</a>
+<a href="motiongraphics.html">Animation</a>
+<a href="interactiondesign.html">Design</a>
+</div>
+</div>
+<a href="aboutme.html">About Me</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="main">
+
+  <h1 class="page-title">Mobile Projects</h1>
+
+  <div class="button-container">
+
+    <!-- Music Player Phone (Video) -->
+    <a href="mediaplayer.html" class="square-button">
+      <video src="videos/skylinepreview.mp4" autoplay muted loop playsinline></video>
+      <div class="button-header">
+        <h3>Music Player</h3>
+        <p>Music Player Concept</p>
+        <span>Click To View Prototype →</span>
+      </div>
+    </a>
+
+    <!-- Ludo Phone (GIF) -->
+    <a href="ludogame/ludogame/index.html" target="_blank" class="square-button">
+      <img src="images/animation.gif" alt="Ludo Game Preview">
+      <div class="button-header">
+        <h3>Ludo Game</h3>
+        <p>Game Concept</p>
+        <span>Click To Play →</span>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

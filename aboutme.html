@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Me - Conor Balen</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* ✅ HEADER (IDENTICAL TO YOUR OTHER PAGE) */
+header {
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a,
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+nav a:hover,
+nav a.active,
+.dropdown > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* 🔥 SPLIT LAYOUT */
+.main {
+  display: flex;
+  max-width: 1200px;
+  margin: 60px auto;
+  gap: 40px;
+  padding: 20px;
+}
+
+.left {
+  flex: 1.2;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.profile {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  transition: 0.3s;
+}
+
+.profile:hover {
+  transform: scale(1.03);
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(14px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  border-left: 4px solid #00d4ff;
+  padding-left: 10px;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #00d4ff;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #00aacc;
+  transform: scale(1.05);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta a {
+  background: #00d4ff;
+  color: black;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta a:hover {
+  background: #00aacc;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .right {
+    position: static;
+    margin-top: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="homepage.html">Home</a>
+
+    <div class="dropdown">
+      <a href="projects.html">Projects</a>
+      <div class="dropdown-menu">
+        <a href="personalprojects.html">Personal</a>
+        <a href="mobiledevices.html">Mobile</a>
+        <a href="motiongraphics.html">Animation</a>
+        <a href="interactiondesign.html">Design</a>
+      </div>
+    </div>
+
+    <a href="aboutme.html" class="active">About Me</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="main">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+
+    <div class="card">
+      <h1>Conor Balen</h1>
+      <p>I design and build modern, interactive digital prototypes.</p>
+      <a href="projects.html" class="button">View My Projects</a>
+    </div>
+
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        I'm a Computer Science and Digital Media Arts major who enjoys creating and designing engaging prototypes. 
+        
+      </p>
+      <a href="contact.html" class="button">Get In Touch</a>
+    </div>
+
+    <div class="card">
+      <h2>Why Hire Me</h2>
+      <p>
+        I focus on clean code, modern design, and continuous improvement.
+        I build projects that look professional and feel smooth to use.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">HTML5</span>
+        <span class="skill">CSS3</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">UI/UX</span>
+        <span class="skill">Animation</span>
+      </div>
+      <a href="projects.html" class="button">See These in Action</a>
+    </div>
+
+    <div class="cta">
+      <h2>Let’s Work Together</h2>
+      <a href="contact.html">Contact Me</a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE IMAGE -->
+  <div class="right">
+    <img src="images/aboutMePic.jpeg" alt="Conor Balen" class="profile">
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Conor Balen - Projects</title>
+
+<style>
+/* =========================
+   GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* allow vertical scrolling */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: linear-gradient(-45deg, #0b0b0b, #111111, #1a1a1a, #0b0b0b);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow Background */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+  z-index: -1;
+  filter: blur(80px);
+}
+
+body::before { top: -200px; left: -200px; }
+body::after { bottom: -200px; right: -200px; }
+
+/* Header */
+header {
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+nav a,
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active,
+.dropdown > a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0,0,0,0.9);
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  min-width: 160px;
+  z-index: 200;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.6;
+}
+
+/* Projects Grid */
+.projects-grid {
+  width: 92%;
+  max-width: 1300px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
+  border: 2px solid white; /* white outline */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+}
+
+.project-card:hover {
+  transform: translateY(-14px) scale(1.02);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.9);
+}
+
+/* Media wrapper */
+.media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.media-wrapper img,
+.media-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Overlay Text */
+.overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  z-index: 2;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.project-card:hover .overlay {
+  transform: translateY(-10px);
+}
+
+.overlay h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-wrapper {
+    height: 260px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="homepage.html">Home</a>
+<div class="dropdown">
+<a href="projects.html" class="active">Projects</a>
+</div>
+<a href="aboutme.html">About Me</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="hero">
+  <h1>Explore My Work</h1>
+  <p>Design, development, and motion combined into immersive experiences.</p>
+</div>
+
+<div class="projects-grid">
+
+  <!-- Top Row: Motion & Animation -->
+  <a href="motiongraphics.html" class="project-card">
+    <div class="media-wrapper">
+      <video src="videos/ludogame.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="overlay"><h2>Motion & Animation</h2></div>
+  </a>
+
+  <!-- Top Row: Mobile Apps -->
+  <a href="mobiledevices.html" class="project-card">
+    <div class="media-wrapper">
+      <video src="videos/skylinepreview.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <div class="overlay"><h2>Mobile Apps</h2></div>
+  </a>
+
+  <!-- Full-width Personal Projects -->
+  <a href="personalprojects.html" class="project-card full-width">
+    <div class="media-wrapper">
+      <img src="images/personal.gif" alt="Personal Projects">
+    </div>
+    <div class="overlay"><h2>Personal Projects</h2></div>
+  </a>
+
+</div>
+
+<footer>
+© 2026 Conor Balen. All rights reserved.
+</footer>
+
+</body>
+</html>
+
+
+
