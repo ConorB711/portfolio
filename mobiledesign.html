@@ -122,13 +122,7 @@ nav a.active,
   margin-bottom: 0.5rem;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  color: #e0e0e0;
-  line-height: 1.6;
-}
-
-/* ================= GRID FOR PHONES ================= */
+/* ================= VIDEO GRID ================= */
 .video-section {
   width: 100%;
   display: flex;
@@ -138,7 +132,7 @@ nav a.active,
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px); /* ✅ 3 per row */
+  grid-template-columns: repeat(3, 300px);
   gap: 40px;
   justify-content: center;
 }
@@ -161,7 +155,6 @@ nav a.active,
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* Make both videos and YouTube iframes same size */
 .video-card video,
 .video-card iframe {
   width: 100%;
@@ -171,24 +164,21 @@ nav a.active,
 
 /* ================= HORIZONTAL VIDEOS ================= */
 .horizontal-videos {
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin: 60px auto;
-  flex-wrap: wrap;
   max-width: 1200px;
+  justify-items: center;
 }
 
+.horizontal-card iframe,
 .horizontal-card video {
   width: 550px;
   height: 310px;
-  object-fit: contain;
   border-radius: 16px;
-}
-
-.bordered-video {
+  object-fit: cover;
   border: 4px solid #fff;
-  border-radius: 16px;
   box-sizing: border-box;
 }
 
@@ -196,6 +186,10 @@ nav a.active,
 @media (max-width: 1000px) {
   .video-grid {
     grid-template-columns: repeat(2, 300px);
+  }
+
+  .horizontal-videos {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -236,10 +230,9 @@ nav a.active,
   <h1>Mobile Design</h1>
 </div>
 
-<!-- ================= VIDEO GRID ================= -->
+<!-- ================= VIDEO GRID (ALL 6) ================= -->
 <div class="video-section">
   <div class="video-grid">
-
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/VVtJXWSaGa8?autoplay=1&mute=1&loop=1&playlist=VVtJXWSaGa8&rel=0&modestbranding=1"></iframe>
     </div>
@@ -263,36 +256,41 @@ nav a.active,
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/F8QhWhm9PUg?autoplay=1&mute=1&loop=1&playlist=F8QhWhm9PUg&rel=0&modestbranding=1"></iframe>
     </div>
-
   </div>
 </div>
 
 <!-- ================= HORIZONTAL VIDEOS ================= -->
-<div class="horizontal-videos">
+<section class="horizontal-videos">
   <div class="horizontal-card">
-    <video autoplay muted loop playsinline>
-      <source src="videos/chicagoWebsite.mp4" type="video/mp4">
-    </video>
+    <iframe 
+      src="https://www.youtube.com/embed/DEUDkD49onQ?autoplay=1&mute=1&loop=1&playlist=DEUDkD49onQ&controls=1&modestbranding=1&rel=0"
+      title="Horizontal Video 1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/logoAnimations.mp4" type="video/mp4">
-    </video>
+    <iframe 
+      src="https://www.youtube.com/embed/Q88h3ufD1f0?autoplay=1&mute=1&loop=1&playlist=Q88h3ufD1f0&controls=1&modestbranding=1&rel=0"
+      title="Horizontal Video 2"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/monogram.mp4" type="video/mp4">
-    </video>
+    <iframe 
+      src="https://www.youtube.com/embed/g78tuXkY1Ns?autoplay=1&mute=1&loop=1&playlist=g78tuXkY1Ns&controls=1&modestbranding=1&rel=0"
+      title="Horizontal Video 3"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
   </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218proj1.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
+</section>
 
 </body>
 </html>
