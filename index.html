@@ -6,9 +6,6 @@
   <title>Conor Balen - Portfolio</title>
 
   <style>
-    /* =========================
-       GLOBAL RESET
-    ========================== */
     * {
       margin: 0;
       padding: 0;
@@ -31,32 +28,30 @@
     }
 
     /* =========================
-       BACKGROUND VIDEO (CLEARER)
+       YOUTUBE BACKGROUND VIDEO
     ========================== */
     .bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 ratio */
+      min-height: 100vh;
+      min-width: 177.77vh; /* keeps it filled */
+      transform: translate(-50%, -50%);
       z-index: -5;
       pointer-events: none;
-      filter: contrast(1.2) saturate(1.2); /* Adjusted for more clarity */
     }
 
-    /* lighter overlay */
+    /* overlay */
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.4); /* Increased the overlay for better readability */
+      background: rgba(0,0,0,0.4);
       z-index: -4;
     }
 
-    /* =========================
-       HEADER (UPDATED)
-    ========================== */
     header {
       width: 100%;
       padding: 1rem 0;
@@ -92,9 +87,6 @@
       transform: scale(1.05);
     }
 
-    /* =========================
-       HERO (IMPROVED VISUAL HIERARCHY)
-    ========================== */
     .hero {
       min-height: calc(100vh - 100px);
       padding: 60px 20px;
@@ -108,56 +100,22 @@
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 20px;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.85); /* Enhanced readability */
+      text-shadow: 0 4px 20px rgba(0,0,0,0.85);
     }
 
     .role {
       opacity: 0.95;
       margin-bottom: 28px;
-      font-size: 1.25rem; /* Slight increase in size for better legibility */
+      font-size: 1.25rem;
       text-shadow: 0 2px 12px rgba(0,0,0,0.8);
     }
 
-    .statement {
-      max-width: 600px;
-      opacity: 0.9;
-      margin-bottom: 50px;
-      line-height: 1.7;
-      font-size: 1.2rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    }
-
-    /* =========================
-       BUTTON (ADDED ELEVATION)
-    ========================== */
-    .main-button {
-      padding: 16px 48px;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      backdrop-filter: blur(10px);
-      transition: 0.4s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Added subtle shadow for depth */
-    }
-
-    .main-button:hover {
-      transform: translateY(-10px) scale(1.05);
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3); /* Enhanced hover effect */
-    }
-
-    /* =========================
-       FOOTER (UPDATED)
-    ========================== */
     footer {
       margin-top: auto;
       padding: 30px;
       opacity: 0.6;
       text-align: center;
-      background: rgba(0, 0, 0, 0.7); /* Added dark background to footer */
+      background: rgba(0, 0, 0, 0.7);
       font-size: 0.9rem;
     }
   </style>
@@ -165,10 +123,13 @@
 
 <body>
 
-  <!-- VIDEO -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="videos/portfolioVideo.mp4" type="video/mp4">
-  </video>
+  <!-- ✅ YOUTUBE BACKGROUND -->
+  <iframe
+    class="bg-video"
+    src="https://www.youtube.com/embed/SP-4jKaB48c?autoplay=1&mute=1&loop=1&playlist=SP-4jKaB48c&controls=0&showinfo=0&modestbranding=1"
+    frameborder="0"
+    allow="autoplay; fullscreen"
+  ></iframe>
 
   <header>
     <nav>
@@ -183,7 +144,6 @@
     <h1>Conor Balen's Portfolio</h1>
     <p class="role">
       Hardcoded completely by Conor Balen
-    </p>
     </p>
   </section>
 

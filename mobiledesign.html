@@ -138,7 +138,7 @@ nav a.active,
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(2, 300px); /* 2 per row */
+  grid-template-columns: repeat(3, 300px); /* ✅ 3 per row */
   gap: 40px;
   justify-content: center;
 }
@@ -165,7 +165,7 @@ nav a.active,
 .video-card video,
 .video-card iframe {
   width: 100%;
-  height: 533px; /* vertical phone aspect ratio */
+  height: 533px;
   border-radius: 30px;
 }
 
@@ -222,10 +222,9 @@ nav a.active,
 <nav>
 <a href="index.html">Home</a>
 <div class="dropdown">
-  <a href="projects.html" class="active">Animation</a>
+  <a href="projects.html" class="active">Mobile Design</a>
   <div class="dropdown-menu">
     <a href="personalprojects.html">Personal</a>
-    <a href="mobiledevices.html">Mobile</a>
   </div>
 </div>
 <a href="aboutme.html">About Me</a>
@@ -234,78 +233,39 @@ nav a.active,
 </header>
 
 <div class="hero">
-  <h1>My Animations</h1>
-  <p>The Place Where My Prototypes Are Given Life</p>
+  <h1>Mobile Design</h1>
 </div>
 
 <!-- ================= VIDEO GRID ================= -->
-<!-- Phones Grid -->
 <div class="video-section">
   <div class="video-grid">
-    <!-- First YouTube video -->
+
     <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/VVtJXWSaGa8?autoplay=1&mute=1&loop=1&playlist=VVtJXWSaGa8&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/VVtJXWSaGa8?autoplay=1&mute=1&loop=1&playlist=VVtJXWSaGa8&rel=0&modestbranding=1"></iframe>
     </div>
 
-    <!-- Second YouTube video -->
     <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/T1tEcGEt9U0?autoplay=1&mute=1&loop=1&playlist=T1tEcGEt9U0&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/T1tEcGEt9U0?autoplay=1&mute=1&loop=1&playlist=T1tEcGEt9U0&rel=0&modestbranding=1"></iframe>
     </div>
 
-    <!-- Third YouTube video -->
     <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/zco3VZUkpXg?autoplay=1&mute=1&loop=1&playlist=zco3VZUkpXg&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <!-- Fourth YouTube video -->
-    <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/-eaIvIgMvUY?autoplay=1&mute=1&loop=1&playlist=-eaIvIgMvUY&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <!-- Fifth YouTube video -->
-    <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/WogeNP95ljM?autoplay=1&mute=1&loop=1&playlist=WogeNP95ljM&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <!-- Sixth YouTube video -->
-    <div class="video-card">
-      <iframe 
-        src="https://www.youtube.com/embed/F8QhWhm9PUg?autoplay=1&mute=1&loop=1&playlist=F8QhWhm9PUg&rel=0&modestbranding=1" 
-        title="Video" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/zco3VZUkpXg?autoplay=1&mute=1&loop=1&playlist=zco3VZUkpXg&rel=0&modestbranding=1"></iframe>
     </div>
 
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/-eaIvIgMvUY?autoplay=1&mute=1&loop=1&playlist=-eaIvIgMvUY&rel=0&modestbranding=1"></iframe>
+    </div>
 
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/WogeNP95ljM?autoplay=1&mute=1&loop=1&playlist=WogeNP95ljM&rel=0&modestbranding=1"></iframe>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/F8QhWhm9PUg?autoplay=1&mute=1&loop=1&playlist=F8QhWhm9PUg&rel=0&modestbranding=1"></iframe>
+    </div>
+
+  </div>
+</div>
 
 <!-- ================= HORIZONTAL VIDEOS ================= -->
 <div class="horizontal-videos">
@@ -332,11 +292,16 @@ nav a.active,
       <source src="videos/dma218proj1.mp4" type="video/mp4">
     </video>
   </div>
-
-  <!-- Add more horizontal videos here -->
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
 
 
