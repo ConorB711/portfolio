@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conor Balen - Projects</title>
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
+/* ================= GLOBAL ================= */
 * {
   margin: 0;
   padding: 0;
@@ -17,17 +15,12 @@
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto; /* allow vertical scrolling */
-  scroll-behavior: smooth;
-}
-
-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   background: linear-gradient(-45deg, #0b0b0b, #111111, #1a1a1a, #0b0b0b);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
+  scroll-behavior: smooth;
 }
 
 @keyframes gradientShift {
@@ -36,7 +29,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Glow Background */
+/* Glow background */
 body::before,
 body::after {
   content: "";
@@ -47,7 +40,6 @@ body::after {
   z-index: -1;
   filter: blur(80px);
 }
-
 body::before { top: -200px; left: -200px; }
 body::after { bottom: -200px; right: -200px; }
 
@@ -55,23 +47,20 @@ body::after { bottom: -200px; right: -200px; }
 header {
   width: 100%;
   padding: 1rem 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-
-nav a,
-.dropdown > a {
+nav a {
   color: white;
   text-decoration: none;
   padding: 0.8rem 1.6rem;
@@ -80,119 +69,85 @@ nav a,
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
-
-nav a:hover,
-nav a.active,
-.dropdown > a:hover {
+nav a:hover, nav a.active {
   background: rgba(255,255,255,0.2);
   transform: scale(1.05);
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgba(0,0,0,0.9);
-  padding: 0.5rem 0;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  min-width: 160px;
-  z-index: 200;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  transition: background 0.3s;
-}
-
-.dropdown-menu a:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
   text-align: center;
   margin-top: 100px;
 }
-
 .hero h1 {
   font-size: 3.5rem;
   margin-bottom: 10px;
 }
-
 .hero p {
   opacity: 0.6;
 }
 
-/* Projects Grid */
+/* Projects grid */
 .projects-grid {
   width: 92%;
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 80px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  gap: 40px;
 }
 
-/* Project Card */
+/* Project card */
 .project-card {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
   text-decoration: none;
-  border: 2px solid white; /* white outline */
+  border: 2px solid white;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
 }
-
 .project-card:hover {
-  transform: translateY(-14px) scale(1.02);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.9);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.8);
 }
 
 /* Media wrapper */
 .media-wrapper {
   position: relative;
   width: 100%;
-  height: 340px;
+  height: 300px;
   overflow: hidden;
   border-radius: 24px;
 }
-
-.media-wrapper img,
-.media-wrapper video {
+.media-wrapper iframe,
+.media-wrapper video,
+.media-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
 
-/* Overlay Text */
+/* Transparent clickable overlay */
+.click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+}
+
+/* Text overlay */
 .overlay {
   position: absolute;
-  bottom: 20px;
-  left: 25px;
-  z-index: 2;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  bottom: 15px;
+  left: 20px;
+  z-index: 3;
 }
-
-.project-card:hover .overlay {
-  transform: translateY(-10px);
-}
-
 .overlay h2 {
   font-size: 1.6rem;
   font-weight: 600;
@@ -212,11 +167,9 @@ footer {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-
   .media-wrapper {
-    height: 260px;
+    height: 220px;
   }
-
   .hero h1 {
     font-size: 2.4rem;
   }
@@ -229,9 +182,7 @@ footer {
 <header>
 <nav>
 <a href="index.html">Home</a>
-<div class="dropdown">
 <a href="projects.html" class="active">Projects</a>
-</div>
 <a href="aboutme.html">About Me</a>
 <a href="contact.html">Contact</a>
 </nav>
@@ -244,43 +195,28 @@ footer {
 
 <div class="projects-grid">
 
-<!-- Top Row: Motion & Animation -->
-<a href="motiongraphics.html" class="project-card">
-  <div class="media-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/T1tEcGEt9U0?autoplay=1&mute=1&loop=1&playlist=T1tEcGEt9U0&rel=0&modestbranding=1"
-      title="Motion & Animation Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="width: 100%; height: 100%; border: none;">
-    </iframe>
+  <!-- Motion & Animation -->
+  <div class="project-card">
+    <div class="media-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/T1tEcGEt9U0?autoplay=1&mute=1&loop=1&playlist=T1tEcGEt9U0&rel=0&modestbranding=1"
+        title="Motion & Animation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+      <a href="motiongraphics.html" class="click-overlay"></a>
+    </div>
+    <div class="overlay"><h2>Motion & Animation</h2></div>
   </div>
-  <div class="overlay"><h2>Motion & Animation</h2></div>
-</a>
 
-<!-- Top Row: Motion & Animation -->
-<a href="motiongraphics.html" class="project-card">
-  <div class="media-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/-eaIvIgMvUY?autoplay=1&mute=1&loop=1&playlist=-eaIvIgMvUY&rel=0&modestbranding=1"
-      title="Motion & Animation Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      style="width: 100%; height: 100%; border: none;">
-    </iframe>
-  </div>
-  <div class="overlay"><h2>Motion & Animation</h2></div>
-</a>
-
-  <!-- Full-width Personal Projects -->
-  <a href="personalprojects.html" class="project-card full-width">
+  <!-- Personal Projects (image) -->
+  <div class="project-card">
     <div class="media-wrapper">
       <img src="images/personal.gif" alt="Personal Projects">
+      <a href="personalprojects.html" class="click-overlay"></a>
     </div>
     <div class="overlay"><h2>Personal Projects</h2></div>
-  </a>
+  </div>
 
 </div>
 
