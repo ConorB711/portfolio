@@ -138,12 +138,11 @@ nav a.active,
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px); /* 3 per row */
+  grid-template-columns: repeat(2, 300px); /* 2 per row */
   gap: 40px;
-  justify-content: center; /* centers last row if less than 3 */
+  justify-content: center;
 }
 
-/* Phone Cards */
 .video-card {
   width: 300px;
   border-radius: 48px;
@@ -157,22 +156,23 @@ nav a.active,
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.video-card video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 30px;
-}
-
 .video-card:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
+/* Make both videos and YouTube iframes same size */
+.video-card video,
+.video-card iframe {
+  width: 100%;
+  height: 533px; /* vertical phone aspect ratio */
+  border-radius: 30px;
+}
+
 /* ================= HORIZONTAL VIDEOS ================= */
 .horizontal-videos {
   display: flex;
-  justify-content: flex-start; /* 👈 change this */
+  justify-content: flex-start;
   gap: 40px;
   margin: 60px auto;
   flex-wrap: wrap;
@@ -192,7 +192,7 @@ nav a.active,
   box-sizing: border-box;
 }
 
-/* ================= RESPONISVE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1000px) {
   .video-grid {
     grid-template-columns: repeat(2, 300px);
@@ -238,34 +238,42 @@ nav a.active,
   <p>The Place Where My Prototypes Are Given Life</p>
 </div>
 
-<!-- Phones Grid -->
+<!-- ================= VIDEO GRID ================= -->
 <div class="video-section">
   <div class="video-grid">
+    <!-- YouTube example -->
     <div class="video-card">
-      <video autoplay muted loop playsinline>
-        <source src="videos/checkboxapp.mp4" type="video/mp4">
-      </video>
+      <iframe 
+        src="https://www.youtube.com/embed/VVtJXWSaGa8?autoplay=1&mute=1&loop=1&playlist=VVtJXWSaGa8" 
+        title="Animation 1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
     </div>
+
+    <!-- Local MP4 examples -->
     <div class="video-card">
       <video autoplay muted loop playsinline>
         <source src="videos/ludogame.mp4" type="video/mp4">
       </video>
     </div>
+
     <div class="video-card">
       <video autoplay muted loop playsinline>
         <source src="videos/Menuapp.mp4" type="video/mp4">
       </video>
     </div>
+
     <div class="video-card">
       <video autoplay muted loop playsinline>
         <source src="videos/mobileWatchApp.mp4" type="video/mp4">
       </video>
     </div>
-    <!-- Add more video-cards here, grid will auto-wrap -->
   </div>
 </div>
 
-<!-- Optional horizontal videos -->
+<!-- ================= HORIZONTAL VIDEOS ================= -->
 <div class="horizontal-videos">
   <div class="horizontal-card">
     <video autoplay muted loop playsinline>
@@ -291,47 +299,10 @@ nav a.active,
     </video>
   </div>
 
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218proj2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218ex3.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218ex2a.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218ex1c.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/dma218ex1b.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/demoreel.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="horizontal-card">
-    <video class="bordered-video" autoplay muted loop playsinline>
-      <source src="videos/winteranimation.mp4" type="video/mp4">
-    </video>
-  </div>
+  <!-- Add more horizontal videos here -->
 </div>
+
+</body>
+</html>
 
 
