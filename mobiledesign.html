@@ -77,39 +77,6 @@ nav a.active,
   transform: scale(1.05);
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 150%;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 0.5rem 0;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  min-width: 160px;
-  z-index: 200;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #fff;
-  transition: background 0.3s;
-}
-
-.dropdown-menu a:hover {
-  background-color: rgba(255,255,255,0.1);
-}
-
 /* ================= HERO ================= */
 .hero {
   max-width: 800px;
@@ -182,6 +149,18 @@ nav a.active,
   box-sizing: border-box;
 }
 
+/* ================= 🔥 CLEAN YOUTUBE FIX ================= */
+/* removes hover UI completely */
+.video-card iframe,
+.horizontal-card iframe {
+  pointer-events: none;
+}
+
+.video-card,
+.horizontal-card {
+  overflow: hidden;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1000px) {
   .video-grid {
@@ -217,9 +196,6 @@ nav a.active,
 <a href="index.html">Home</a>
 <div class="dropdown">
   <a href="projects.html" class="active">Mobile Design</a>
-  <div class="dropdown-menu">
-    <a href="personalprojects.html">Personal</a>
-  </div>
 </div>
 <a href="aboutme.html">About Me</a>
 <a href="contact.html">Contact</a>
@@ -230,9 +206,10 @@ nav a.active,
   <h1>Mobile Design</h1>
 </div>
 
-<!-- ================= VIDEO GRID (ALL 6) ================= -->
+<!-- ================= VIDEO GRID (6 VIDEOS) ================= -->
 <div class="video-section">
   <div class="video-grid">
+
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/VVtJXWSaGa8?autoplay=1&mute=1&loop=1&playlist=VVtJXWSaGa8&rel=0&modestbranding=1"></iframe>
     </div>
@@ -256,70 +233,37 @@ nav a.active,
     <div class="video-card">
       <iframe src="https://www.youtube.com/embed/F8QhWhm9PUg?autoplay=1&mute=1&loop=1&playlist=F8QhWhm9PUg&rel=0&modestbranding=1"></iframe>
     </div>
+
   </div>
 </div>
 
 <!-- ================= HORIZONTAL VIDEOS ================= -->
 <section class="horizontal-videos">
+
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/DEUDkD49onQ?autoplay=1&mute=1&loop=1&playlist=DEUDkD49onQ&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/DEUDkD49onQ?autoplay=1&mute=1&loop=1&playlist=DEUDkD49onQ&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/tCwEPGeVSL0?autoplay=1&mute=1&loop=1&playlist=tCwEPGeVSL0&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 5"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/tCwEPGeVSL0?autoplay=1&mute=1&loop=1&playlist=tCwEPGeVSL0&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/g78tuXkY1Ns?autoplay=1&mute=1&loop=1&playlist=g78tuXkY1Ns&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 3"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/g78tuXkY1Ns?autoplay=1&mute=1&loop=1&playlist=g78tuXkY1Ns&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/OfaSP9OJ8TQ?autoplay=1&mute=1&loop=1&playlist=OfaSP9OJ8TQ&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 4"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/OfaSP9OJ8TQ?autoplay=1&mute=1&loop=1&playlist=OfaSP9OJ8TQ&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/GVVnYgqbnN0?autoplay=1&mute=1&loop=1&playlist=GVVnYgqbnN0&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 6"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/GVVnYgqbnN0?autoplay=1&mute=1&loop=1&playlist=GVVnYgqbnN0&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/Jo0PAHSDckU?autoplay=1&mute=1&loop=1&playlist=Jo0PAHSDckU&controls=1&modestbranding=1&rel=0"
-      title="Horizontal Video 7"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/Jo0PAHSDckU?autoplay=1&mute=1&loop=1&playlist=Jo0PAHSDckU&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
+
 </section>
 
 </body>
