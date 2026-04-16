@@ -6,6 +6,7 @@
 <title>Conor Balen - Animations</title>
 
 <style>
+
 /* ================= BODY ================= */
 body {
   margin: 0;
@@ -87,98 +88,46 @@ nav a.active {
   margin-bottom: 0.5rem;
 }
 
-/* ================= VIDEO GRID (PHONES) ================= */
-.video-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 300px);
-  gap: 40px;
-  justify-content: center;
-}
-
-.video-card {
-  width: 300px;
-  border-radius: 48px;
-  overflow: hidden;
-  background: rgba(255,255,255,0.06);
-  border: 2px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(25px);
-  box-shadow: 
-    0 40px 80px rgba(0,0,0,0.7),
-    inset 0 0 0 1px rgba(255,255,255,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-.video-card iframe {
-  width: 100%;
-  height: 533px;
-  border-radius: 30px;
-}
-
-/* ================= DESKTOP VIDEOS ================= */
+/* ================= GRID ================= */
 .horizontal-videos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 550px);
   gap: 40px;
   margin: 60px auto;
-  max-width: 1300px;
-  justify-items: center;
+  justify-content: center;
 }
 
-.horizontal-card iframe {
-  width: 650px;
-  aspect-ratio: 1440 / 1024;
+/* ================= PERFECT 16:9 BOX ================= */
+.horizontal-card {
+  width: 550px;
+  aspect-ratio: 16 / 9;
   border-radius: 16px;
-  object-fit: cover;
+  overflow: hidden;
   border: 4px solid #fff;
   box-sizing: border-box;
+  position: relative;
   transition: transform 0.3s ease;
 }
 
-/* 🔥 subtle hover effect */
 .horizontal-card:hover {
   transform: scale(1.03);
 }
 
-/* ================= YOUTUBE CONTROL ================= */
-/* phones = no interaction */
-.video-card iframe {
-  pointer-events: none;
-}
-
-/* desktop = interactive */
+/* ================= VIDEO FIT (NO CROPPING) ================= */
 .horizontal-card iframe {
-  pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1000px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 300px);
-  }
-
   .horizontal-videos {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 650px) {
-  .video-grid {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
   .hero {
     margin: 60px 20px 0 20px;
   }
@@ -186,7 +135,12 @@ nav a.active {
   .hero h1 {
     font-size: 2.4rem;
   }
+
+  .horizontal-card {
+    width: 90%;
+  }
 }
+
 </style>
 </head>
 
@@ -205,27 +159,38 @@ nav a.active {
   <h1>Desktop Design</h1>
 </div>
 
-<!-- ================= DESKTOP VIDEOS ================= -->
 <section class="horizontal-videos">
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/Anp1Hxsj-mw?autoplay=1&mute=1&loop=1&playlist=Anp1Hxsj-mw&controls=0&modestbranding=1&rel=0"
-      title="Desktop Design 1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/Anp1Hxsj-mw?autoplay=1&mute=1&loop=1&playlist=Anp1Hxsj-mw&controls=0&modestbranding=1&rel=0"></iframe>
   </div>
 
   <div class="horizontal-card">
-    <iframe 
-      src="https://www.youtube.com/embed/_MaSIm5DDKE?autoplay=1&mute=1&loop=1&playlist=_MaSIm5DDKE&controls=0&modestbranding=1&rel=0"
-      title="Desktop Design 1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/_MaSIm5DDKE?autoplay=1&mute=1&loop=1&playlist=_MaSIm5DDKE&controls=0&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/DEUDkD49onQ?autoplay=1&mute=1&loop=1&playlist=DEUDkD49onQ&controls=1&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/tCwEPGeVSL0?autoplay=1&mute=1&loop=1&playlist=tCwEPGeVSL0&controls=1&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/g78tuXkY1Ns?autoplay=1&mute=1&loop=1&playlist=g78tuXkY1Ns&controls=1&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/OfaSP9OJ8TQ?autoplay=1&mute=1&loop=1&playlist=OfaSP9OJ8TQ&controls=1&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/GVVnYgqbnN0?autoplay=1&mute=1&loop=1&playlist=GVVnYgqbnN0&controls=1&modestbranding=1&rel=0"></iframe>
+  </div>
+
+  <div class="horizontal-card">
+    <iframe src="https://www.youtube.com/embed/Jo0PAHSDckU?autoplay=1&mute=1&loop=1&playlist=Jo0PAHSDckU&controls=1&modestbranding=1&rel=0"></iframe>
   </div>
 
 </section>
